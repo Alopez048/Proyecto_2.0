@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Visual;
-
+//comentario
 import Code.Hamburguesa;
 import iPane.panelMenú;
 
