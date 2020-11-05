@@ -34,10 +34,12 @@ public class panelClientes extends javax.swing.JPanel {
         panelPapas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txtUser = new RSMaterialComponent.RSTextFieldMaterialIcon();
-        txtUser1 = new RSMaterialComponent.RSTextFieldMaterialIcon();
-        txtUser2 = new RSMaterialComponent.RSTextFieldMaterialIcon();
-        txtUser3 = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        txtNit = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        txtTelefono = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        txtNombre = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        txtDireccion = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        btnSiguiente = new RSMaterialComponent.RSButtonMaterialOne();
+        btnSalir = new RSMaterialComponent.RSButtonMaterialOne();
         jPanel4 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -83,54 +85,81 @@ public class panelClientes extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtUser.setForeground(new java.awt.Color(102, 102, 102));
-        txtUser.setColorIcon(new java.awt.Color(102, 102, 102));
-        txtUser.setColorMaterial(new java.awt.Color(255, 204, 0));
-        txtUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_OFFER);
-        txtUser.setPlaceholder("NIT");
+        txtNit.setForeground(new java.awt.Color(102, 102, 102));
+        txtNit.setColorIcon(new java.awt.Color(102, 102, 102));
+        txtNit.setColorMaterial(new java.awt.Color(255, 204, 0));
+        txtNit.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_OFFER);
+        txtNit.setPlaceholder("NIT");
 
-        txtUser1.setForeground(new java.awt.Color(102, 102, 102));
-        txtUser1.setColorIcon(new java.awt.Color(102, 102, 102));
-        txtUser1.setColorMaterial(new java.awt.Color(255, 204, 0));
-        txtUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PHONE);
-        txtUser1.setPlaceholder("Telefono");
+        txtTelefono.setForeground(new java.awt.Color(102, 102, 102));
+        txtTelefono.setColorIcon(new java.awt.Color(102, 102, 102));
+        txtTelefono.setColorMaterial(new java.awt.Color(255, 204, 0));
+        txtTelefono.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PHONE);
+        txtTelefono.setPlaceholder("Telefono");
 
-        txtUser2.setForeground(new java.awt.Color(102, 102, 102));
-        txtUser2.setColorIcon(new java.awt.Color(102, 102, 102));
-        txtUser2.setColorMaterial(new java.awt.Color(255, 204, 0));
-        txtUser2.setPlaceholder("Nombre");
+        txtNombre.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombre.setColorIcon(new java.awt.Color(102, 102, 102));
+        txtNombre.setColorMaterial(new java.awt.Color(255, 204, 0));
+        txtNombre.setPlaceholder("Nombre");
 
-        txtUser3.setForeground(new java.awt.Color(102, 102, 102));
-        txtUser3.setColorIcon(new java.awt.Color(102, 102, 102));
-        txtUser3.setColorMaterial(new java.awt.Color(255, 204, 0));
-        txtUser3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_ACTIVITY);
-        txtUser3.setPlaceholder("Direccion");
+        txtDireccion.setForeground(new java.awt.Color(102, 102, 102));
+        txtDireccion.setColorIcon(new java.awt.Color(102, 102, 102));
+        txtDireccion.setColorMaterial(new java.awt.Color(255, 204, 0));
+        txtDireccion.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_ACTIVITY);
+        txtDireccion.setPlaceholder("Direccion");
+
+        btnSiguiente.setBackground(new java.awt.Color(26, 157, 137));
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguienteActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(223, 221, 13));
+        btnSalir.setText("Salir");
+        btnSalir.setBackgroundHover(new java.awt.Color(255, 51, 0));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUser3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(208, 208, 208))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtUser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -139,7 +168,7 @@ public class panelClientes extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 9, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,8 +208,28 @@ public class panelClientes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        /*if(loginconect.validar_ingreso()== 1){
+            this.dispose();
+            JOptionPane.showMessageDialog(null, "Bienvenido "+txtUser.getText(),"Mensaje de bienvenida",
+                JOptionPane.INFORMATION_MESSAGE);
+            MENU nuevo = new MENU();
+            nuevo.setVisible(true);
+        }else if(txtUser.getText().isEmpty() || txtpass.getText().isEmpty()){
+            lblAdvertencia.setText("Los campos son obligatorios");
+        } else {
+            lblAdvertencia.setText("Usuario o contraseña incorrectos");
+        }*/
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(1);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private RSMaterialComponent.RSButtonMaterialOne btnSalir;
+    private RSMaterialComponent.RSButtonMaterialOne btnSiguiente;
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -188,9 +237,9 @@ public class panelClientes extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     public static javax.swing.JPanel panelPapas;
     private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
-    public static RSMaterialComponent.RSTextFieldMaterialIcon txtUser;
-    public static RSMaterialComponent.RSTextFieldMaterialIcon txtUser1;
-    public static RSMaterialComponent.RSTextFieldMaterialIcon txtUser2;
-    public static RSMaterialComponent.RSTextFieldMaterialIcon txtUser3;
+    public static RSMaterialComponent.RSTextFieldMaterialIcon txtDireccion;
+    public static RSMaterialComponent.RSTextFieldMaterialIcon txtNit;
+    public static RSMaterialComponent.RSTextFieldMaterialIcon txtNombre;
+    public static RSMaterialComponent.RSTextFieldMaterialIcon txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
