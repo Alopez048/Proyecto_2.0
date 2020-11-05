@@ -5,19 +5,22 @@
  */
 package iPane;
 
-import formPapas.*;
+import Code.ConCliente;
 
 /**
  *
  * @author nello
  */
 public class panelClientes extends javax.swing.JPanel {
+    
+    private final ConCliente cliente;
 
     /**
      * Creates new form panelMenú
      */
     public panelClientes() {
         initComponents();
+        cliente = new ConCliente();
     }
 
     /**
@@ -130,7 +133,7 @@ public class panelClientes extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,7 +162,7 @@ public class panelClientes extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -168,7 +171,7 @@ public class panelClientes extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 38, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,17 +212,14 @@ public class panelClientes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        /*if(loginconect.validar_ingreso()== 1){
-            this.dispose();
-            JOptionPane.showMessageDialog(null, "Bienvenido "+txtUser.getText(),"Mensaje de bienvenida",
-                JOptionPane.INFORMATION_MESSAGE);
-            MENU nuevo = new MENU();
-            nuevo.setVisible(true);
-        }else if(txtUser.getText().isEmpty() || txtpass.getText().isEmpty()){
-            lblAdvertencia.setText("Los campos son obligatorios");
-        } else {
-            lblAdvertencia.setText("Usuario o contraseña incorrectos");
-        }*/
+  String  nombre  = txtNombre.getText();
+  int nit = Integer.parseInt(txtNit.getText());
+  String direccion = txtDireccion.getText();
+  int telefono = Integer.parseInt(txtTelefono.getText());
+  
+  cliente.ConCliente(nombre, nit, direccion, telefono);
+  
+   
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
