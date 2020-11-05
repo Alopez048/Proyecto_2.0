@@ -117,6 +117,11 @@ public class MENU extends javax.swing.JFrame {
         btnMesa.setAutoscrolls(true);
         btnMesa.setBackgroundHover(new java.awt.Color(227, 223, 11));
         btnMesa.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERSON_ADD);
+        btnMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesaActionPerformed(evt);
+            }
+        });
 
         btnHamburguesas.setBackground(new java.awt.Color(227, 223, 11));
         btnHamburguesas.setText("      Hamburguesas");
@@ -261,6 +266,10 @@ public class MENU extends javax.swing.JFrame {
             btnPapas1.setSelected(true);
             pnlSlider.setPanelSlider(1,panelPapas1, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_btnPapas1ActionPerformed
+
+    private void btnMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMesaActionPerformed
 
     /**
      * @param args the command line arguments
