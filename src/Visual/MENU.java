@@ -42,6 +42,7 @@ public class MENU extends javax.swing.JFrame {
         panelPapas1 = new iPane.panelPapas();
         panelMenú1 = new iPane.panelMenú();
         panelEmpleados2 = new iPane.panelEmpleados();
+        panelClientes1 = new iPane.panelClientes();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
@@ -196,6 +197,9 @@ public class MENU extends javax.swing.JFrame {
         panelEmpleados2.setName("panelEmpleados2"); // NOI18N
         pnlSlider.add(panelEmpleados2, "card4");
 
+        panelClientes1.setName("panelClientes"); // NOI18N
+        pnlSlider.add(panelClientes1, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,7 +272,17 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPapas1ActionPerformed
 
     private void btnMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesaActionPerformed
-        // TODO add your handling code here:
+ if (!btnMesa.isSelected()){
+            btnMenu.setSelected(false);
+            btnEmpleados.setSelected(false);
+            btnMesa.setSelected(true);
+            btnFactura.setSelected(false);
+            
+            pnlSlider.setPanelSlider(1,panelClientes1, RSPanelsSlider.DIRECT.RIGHT);
+            btnHamburguesas.setVisible(false);
+            btnPapas1.setVisible(false);
+          
+        }            
     }//GEN-LAST:event_btnMesaActionPerformed
 
     /**
@@ -315,6 +329,7 @@ public class MENU extends javax.swing.JFrame {
     private RSMaterialComponent.RSButtonMaterialIconOne btnPapas1;
     private RSMaterialComponent.RSButtonMaterialIconOne btnSalir;
     private javax.swing.JSeparator jSeparator1;
+    private iPane.panelClientes panelClientes1;
     private iPane.panelEmpleados panelEmpleados2;
     private iPane.panelMenú panelMenú1;
     private iPane.panelPapas panelPapas1;
