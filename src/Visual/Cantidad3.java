@@ -6,6 +6,7 @@
 package Visual;
 
 import Code.Hamburguesa;
+import static iPane.panelClientes.txtNit;
 import iPane.panelMenú;
 
 
@@ -130,8 +131,8 @@ private final Hamburguesa crear;
         int cost = 25;
         int cant =Integer.parseInt(txtCantidad.getText()) ;
         int total = cost*cant;
-
-        crear.Hamburguesa(SELECT, PRESENTACION, cost, cant, total);
+        String nit=txtNit.getText();
+        crear.Hamburguesa(SELECT, PRESENTACION, cost, cant, total,nit);
 
         dispose();        
     }//GEN-LAST:event_btnOkActionPerformed

@@ -16,18 +16,19 @@ public class Hamburguesa {
         
     }
     
-    public void Hamburguesa(String TIPO ,  String PRESENTACION,  int COSTO, int CANTIDAD, int TOTAL)
+    public void Hamburguesa(String TIPO ,  String PRESENTACION,  int COSTO, int CANTIDAD, int TOTAL,String Nit)
     {
         
         try{
             Connection hamburguesas= nuevo.getConection();
-            CallableStatement CS= hamburguesas.prepareCall("call insertHamburguesas (?,?,?,?,?)");
+            CallableStatement CS= hamburguesas.prepareCall("call insertHamburguesas (?,?,?,?,?,?)");
      
         CS.setString(1,TIPO );
         CS.setString(2,PRESENTACION );
         CS.setInt(3,COSTO );
         CS.setInt(4,CANTIDAD );
         CS.setInt(5, TOTAL);
+        CS.setString(6,Nit);
         CS.executeUpdate();
         JOptionPane.showMessageDialog(null, "Se Guardó el Registro");
         

@@ -41,6 +41,7 @@ public class Mesas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         panelPapas.setBackground(new java.awt.Color(227, 223, 11));
 
@@ -137,13 +138,15 @@ public class Mesas extends javax.swing.JFrame {
          String nit = txtNit.getText();
         String direccion = txtDireccion.getText();
         int telefono = Integer.parseInt(txtTelefono.getText());
+        String idnit=txtNit.getText();
   
   cliente.ConCliente(mesa,nombre, nit, direccion, telefono);
   
   txtNombre.setText("");
-  txtNit.setText("");
+  //txtNit.setText("");
   txtDireccion.setText("");
   txtTelefono.setText("");
+  dispose();
     }//GEN-LAST:event_btnMesa1ActionPerformed
 
     private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed

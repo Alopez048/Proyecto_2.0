@@ -11,6 +11,7 @@ import RSMaterialComponent.RSTextFieldMaterial;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -100,7 +101,7 @@ public class panelFactura extends javax.swing.JPanel {
             .addGroup(panelPapasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelPapasLayout.setVerticalGroup(
             panelPapasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,8 +195,8 @@ public class panelFactura extends javax.swing.JPanel {
                                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(128, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3))
+                .addGap(128, 128, 128))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,6 +288,45 @@ public class panelFactura extends javax.swing.JPanel {
             System.out.println(ex.toString());
         }
         
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            TableFactura.setModel(modelo);
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            Coneection conn = new Coneection();
+            Connection con = conn.getConection();
+            String nit = txtNit.getText();
+            String sql = "SELECT CANTIDAD,TIPO, COSTO, TOTAL FROM hamburguesas where Nit="+nit; 
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("CANTIDAD");
+            modelo.addColumn("TIPO");
+            modelo.addColumn("COSTO");
+            modelo.addColumn("TOTAL");
+            
+            
+
+            int[] anchos = {60, 150,50,50};
+            for (int i = 0; i < TableFactura.getColumnCount(); i++) {
+                TableFactura.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.toString());
+        }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 

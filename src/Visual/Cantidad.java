@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package Visual;
-//comentario
 import Code.Hamburguesa;
+import Visual.Mesas.*;
+import static iPane.panelClientes.txtNit;
 import iPane.panelMenú;
 
 
@@ -125,13 +126,16 @@ private final Hamburguesa crear;
     }//GEN-LAST:event_txtCantidadMouseClicked
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        
+        
         String SELECT = "Hamburguesa con queso";
         String PRESENTACION = (String)comboTamaño.getSelectedItem();
         int cost = 25;
         int cant =Integer.parseInt(txtCantidad.getText()) ;
         int total = cost*cant;
+        String idnit=txtNit.getText();
 
-        crear.Hamburguesa(SELECT, PRESENTACION, cost, cant, total);
+        crear.Hamburguesa(SELECT, PRESENTACION, cost, cant, total,idnit);
 
         dispose();        
     }//GEN-LAST:event_btnOkActionPerformed
