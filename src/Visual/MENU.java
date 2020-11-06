@@ -43,6 +43,7 @@ public class MENU extends javax.swing.JFrame {
         panelMenú1 = new iPane.panelMenú();
         panelEmpleados2 = new iPane.panelEmpleados();
         panelClientes1 = new iPane.panelClientes();
+        panelFactura1 = new iPane.panelFactura();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
@@ -200,6 +201,9 @@ public class MENU extends javax.swing.JFrame {
         panelClientes1.setName("panelClientes"); // NOI18N
         pnlSlider.add(panelClientes1, "card6");
 
+        panelFactura1.setName("panelFactura"); // NOI18N
+        pnlSlider.add(panelFactura1, "card7");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -207,7 +211,7 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(rSPanelGradiente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE))
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 759, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +244,17 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
-    
+if (!btnFactura.isSelected()){
+            btnMenu.setSelected(false);
+            btnEmpleados.setSelected(false);
+            btnMesa.setSelected(false);
+            btnFactura.setSelected(true);
+            
+            pnlSlider.setPanelSlider(1,panelFactura1, RSPanelsSlider.DIRECT.RIGHT);
+            btnHamburguesas.setVisible(false);
+            btnPapas1.setVisible(false);
+          
+        }    
     }//GEN-LAST:event_btnFacturaActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
@@ -331,6 +345,7 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private iPane.panelClientes panelClientes1;
     private iPane.panelEmpleados panelEmpleados2;
+    private iPane.panelFactura panelFactura1;
     private iPane.panelMenú panelMenú1;
     private iPane.panelPapas panelPapas1;
     private iPane.panelReloj panelReloj1;
