@@ -138,6 +138,12 @@ public class panelFactura extends javax.swing.JPanel {
         TableFactura.setColorBordeHead(new java.awt.Color(0, 204, 153));
         TableFactura.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(TableFactura);
+        if (TableFactura.getColumnModel().getColumnCount() > 0) {
+            TableFactura.getColumnModel().getColumn(0).setHeaderValue("Cantidad");
+            TableFactura.getColumnModel().getColumn(1).setHeaderValue("Descripcion");
+            TableFactura.getColumnModel().getColumn(2).setHeaderValue("Precio");
+            TableFactura.getColumnModel().getColumn(3).setHeaderValue("Total");
+        }
 
         txtNit.setForeground(new java.awt.Color(0, 0, 0));
         txtNit.setColorMaterial(new java.awt.Color(0, 204, 153));
@@ -235,7 +241,7 @@ public class panelFactura extends javax.swing.JPanel {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -294,11 +300,11 @@ public class panelFactura extends javax.swing.JPanel {
 
             PreparedStatement ps = null;
             ResultSet rs = null;
-            Coneection conn = new Coneection();
-            Connection con = conn.getConection();
+            Coneection objCon = new Coneection();
+            Connection conn = objCon.getConection();
             String nit = txtNit.getText();
-            String sql = "SELECT CANTIDAD,TIPO, COSTO, TOTAL FROM hamburguesas where Nit="+nit; 
-            ps = con.prepareStatement(sql);
+            ps = conn.prepareStatement ("SELECT  CANTIDAD, TIPO, COSTO, TOTAL FROM restaurante.hamburguesas where Nit = ?");
+            ps.setString(1,nit);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
@@ -308,19 +314,17 @@ public class panelFactura extends javax.swing.JPanel {
             modelo.addColumn("TIPO");
             modelo.addColumn("COSTO");
             modelo.addColumn("TOTAL");
-            
-            
 
             int[] anchos = {60, 150,50,50};
             for (int i = 0; i < TableFactura.getColumnCount(); i++) {
-                TableFactura.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-            }
+               TableFactura.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+           }
 
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
                     filas[i] = rs.getObject(i + 1);
-                }
+               }
                 modelo.addRow(filas);
             }
 
