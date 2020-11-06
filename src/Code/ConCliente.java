@@ -21,15 +21,16 @@ public class ConCliente {
     lala = new Coneection();
     }
    
-   public void ConCliente (String NOMBRE, int NIT, String DIRECCION, int TELEFONO){
+   public void ConCliente (int Numero_Mesa, String Nombre, String Nit, String Direccion, int Telefono){
     
     try {
         Connection accessDB = lala.getConection(); 
         CallableStatement cs = accessDB.prepareCall("call insertCliente  (?,?,?,?)" );
-        cs.setString(1,NOMBRE); 
-        cs.setInt(2,NIT);
-        cs.setString(3,DIRECCION);
-        cs.setInt(4,TELEFONO);
+        cs.setInt(1,Numero_Mesa); 
+        cs.setString(2,Nombre);
+        cs.setString(3,Nit);
+        cs.setString(4,Direccion);
+        cs.setInt(5, Telefono);
         
         cs.executeUpdate();
         JOptionPane.showMessageDialog(null, "Registro Guardado");

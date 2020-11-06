@@ -5,17 +5,21 @@
  */
 package Visual;
 
+import Code.ConCliente;
+import static iPane.panelClientes.*;
+
 /**
  *
  * @author Angel Rodriguez
  */
 public class Mesas extends javax.swing.JFrame {
-
+            private final ConCliente cliente;
     /**
      * Creates new form NewJFrame
      */
     public Mesas() {
         initComponents();
+        cliente = new ConCliente();
     }
 
     /**
@@ -130,7 +134,14 @@ public class Mesas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMesa1ActionPerformed
 
     private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
-        // TODO add your handling code here:
+        
+        String  nombre  = txtNombre.getText();
+        int mesa = Integer.parseInt ("1");
+         String nit = txtNit.getText();
+        String direccion = txtDireccion.getText();
+        int telefono = Integer.parseInt(txtTelefono.getText());
+  
+  cliente.ConCliente(mesa,nombre, nit, direccion, telefono);
     }//GEN-LAST:event_btnMesa3ActionPerformed
 
     /**
