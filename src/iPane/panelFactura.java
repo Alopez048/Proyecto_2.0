@@ -143,12 +143,14 @@ public class panelFactura extends javax.swing.JPanel {
         txtNit.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNit.setPlaceholder("NIT");
 
-        txtDireccion.setForeground(new java.awt.Color(0, 0, 0));
+        txtDireccion.setEditable(false);
+        txtDireccion.setForeground(new java.awt.Color(153, 153, 153));
         txtDireccion.setColorMaterial(new java.awt.Color(0, 204, 153));
         txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtDireccion.setPlaceholder("Direccion");
 
-        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombre.setEditable(false);
+        txtNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtNombre.setColorMaterial(new java.awt.Color(0, 204, 153));
         txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNombre.setPlaceholder("Nombre");
@@ -163,7 +165,6 @@ public class panelFactura extends javax.swing.JPanel {
 
         btnBuscar.setBackground(new java.awt.Color(0, 204, 102));
         btnBuscar.setText("Buscar");
-        btnBuscar.setForegroundHover(new java.awt.Color(0, 204, 102));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
@@ -265,29 +266,25 @@ public class panelFactura extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-      /*PreparedStatement ps = null; // Este codigo no se toca 
+      PreparedStatement ps = null; // Este codigo no se toca 
        ResultSet rs = null;
         try {       
-            
-            
             Coneection objCon = new Coneection();
             Connection conn = objCon.getConection();
 
-                  String nit = txtNit.getText();
-            ps = conn.prepareStatement ("SELECT  Nombre, Direccion FROM restaurante.mesas where Nit = nit");
-           
+            String nit = txtNit.getText();
+            ps = conn.prepareStatement ("SELECT  Nombre, Direccion FROM restaurante.mesas where Nit = ?");
+            ps.setString(1,nit);
             rs = ps.executeQuery();
-                String nombre 
             
-   
             while (rs.next()) {
-                txtDepartamento.setText(rs.getString("ID_DEPARTAMENTO"));
-                txtDescripcion.setText(rs.getString("DESCRIPCION"));
+                txtNombre.setText(rs.getString("Nombre"));
+                txtDireccion.setText(rs.getString("Direccion"));
                
             }  
         } catch (SQLException ex) {
             System.out.println(ex.toString());
-        }*/
+        }
         
 
     }//GEN-LAST:event_btnBuscarActionPerformed
