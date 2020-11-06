@@ -266,9 +266,10 @@ public class panelFactura extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-      PreparedStatement ps = null; // Este codigo no se toca 
-       ResultSet rs = null;
-        try {       
+
+        try {  
+            PreparedStatement ps = null;
+            ResultSet rs = null;
             Coneection objCon = new Coneection();
             Connection conn = objCon.getConection();
 
