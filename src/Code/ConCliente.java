@@ -25,7 +25,7 @@ public class ConCliente {
     
     try {
         Connection accessDB = lala.getConection(); 
-        CallableStatement cs = accessDB.prepareCall("call insertCliente  (?,?,?,?)" );
+        CallableStatement cs = accessDB.prepareCall("call insertCliente  (?,?,?,?,?)" );
         cs.setInt(1,Numero_Mesa); 
         cs.setString(2,Nombre);
         cs.setString(3,Nit);

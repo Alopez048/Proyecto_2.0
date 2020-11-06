@@ -20,6 +20,8 @@ public class Mesas extends javax.swing.JFrame {
     public Mesas() {
         initComponents();
         cliente = new ConCliente();
+        rsutilities.RSUtilities.setCentrarVentana(this);
+        rsutilities.RSUtilities.setOpaqueVentana(this, false);       
     }
 
     /**
@@ -130,18 +132,23 @@ public class Mesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
-        
-    }//GEN-LAST:event_btnMesa1ActionPerformed
-
-    private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
-        
-        String  nombre  = txtNombre.getText();
+         String  nombre  = txtNombre.getText();
         int mesa = Integer.parseInt ("1");
          String nit = txtNit.getText();
         String direccion = txtDireccion.getText();
         int telefono = Integer.parseInt(txtTelefono.getText());
   
   cliente.ConCliente(mesa,nombre, nit, direccion, telefono);
+  
+  txtNombre.setText("");
+  txtNit.setText("");
+  txtDireccion.setText("");
+  txtTelefono.setText("");
+    }//GEN-LAST:event_btnMesa1ActionPerformed
+
+    private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
+        
+       
     }//GEN-LAST:event_btnMesa3ActionPerformed
 
     /**
