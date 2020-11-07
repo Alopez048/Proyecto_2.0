@@ -42,6 +42,11 @@ private final ConectarEmpleado registrar;
         txtSalario = new RSMaterialComponent.RSTextFieldMaterialIcon();
         txtCargo = new RSMaterialComponent.RSTextFieldMaterialIcon();
         btnAgregar = new RSMaterialComponent.RSButtonMaterialOne();
+        lblNombre = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        lblSalario = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblCargo = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -61,12 +66,13 @@ private final ConectarEmpleado registrar;
         setBackground(new java.awt.Color(255, 255, 255));
         setName("panelPapas"); // NOI18N
         setPreferredSize(new java.awt.Dimension(672, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelPapas.setBackground(new java.awt.Color(227, 223, 11));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("MENÚ");
+        jLabel1.setText("Agregar Empleado");
 
         javax.swing.GroupLayout panelPapasLayout = new javax.swing.GroupLayout(panelPapas);
         panelPapas.setLayout(panelPapasLayout);
@@ -85,36 +91,93 @@ private final ConectarEmpleado registrar;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        add(panelPapas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 706, -1));
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+        });
 
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setColorIcon(new java.awt.Color(102, 102, 102));
         txtNombre.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtNombre.setPlaceholder("     Nombre");
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
 
         txtDireccion.setForeground(new java.awt.Color(102, 102, 102));
         txtDireccion.setColorIcon(new java.awt.Color(102, 102, 102));
         txtDireccion.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtDireccion.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DOMAIN);
         txtDireccion.setPlaceholder("     Direccion");
+        txtDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDireccionMouseClicked(evt);
+            }
+        });
+        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionKeyTyped(evt);
+            }
+        });
 
         txtTelefono.setForeground(new java.awt.Color(102, 102, 102));
         txtTelefono.setColorIcon(new java.awt.Color(102, 102, 102));
         txtTelefono.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtTelefono.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PHONE_IN_TALK);
         txtTelefono.setPlaceholder("     Telefono");
+        txtTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTelefonoMouseClicked(evt);
+            }
+        });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
 
         txtSalario.setForeground(new java.awt.Color(102, 102, 102));
         txtSalario.setColorIcon(new java.awt.Color(102, 102, 102));
         txtSalario.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtSalario.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DATE_RANGE);
         txtSalario.setPlaceholder("     Salario");
+        txtSalario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSalarioMouseClicked(evt);
+            }
+        });
+        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSalarioKeyTyped(evt);
+            }
+        });
 
         txtCargo.setForeground(new java.awt.Color(102, 102, 102));
         txtCargo.setColorIcon(new java.awt.Color(102, 102, 102));
         txtCargo.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtCargo.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ACCOUNT_BOX);
         txtCargo.setPlaceholder("     Cargo");
+        txtCargo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCargoMouseClicked(evt);
+            }
+        });
+        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCargoKeyTyped(evt);
+            }
+        });
 
         btnAgregar.setBackground(new java.awt.Color(26, 157, 137));
         btnAgregar.setText("Agregar");
@@ -124,41 +187,81 @@ private final ConectarEmpleado registrar;
             }
         });
 
+        lblNombre.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblDireccion.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblSalario.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblTelefono.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCargo.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
                     .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(128, 128, 128))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblTelefono)
+                        .addGap(233, 233, 233))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblNombre)
+                        .addGap(229, 229, 229))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblDireccion)
+                        .addGap(232, 232, 232))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblSalario)
+                        .addGap(231, 231, 231))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblCargo)
+                        .addGap(228, 228, 228))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addGap(3, 3, 3)
-                .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
+                .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDireccion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTelefono)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblSalario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCargo)
+                .addGap(21, 21, 21)
                 .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 80, -1, 426));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -166,46 +269,20 @@ private final ConectarEmpleado registrar;
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 18, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 80, -1, 468));
+
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setAlignmentX(1.0F);
         jSeparator1.setAlignmentY(1.0F);
         jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPapas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelPapas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(42, 42, 42))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 80, 100, 457));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -218,6 +295,107 @@ private final ConectarEmpleado registrar;
         registrar.ConectarEmpleado( nombre, dir, tel, salr, Cargo);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        
+         char validar = evt.getKeyChar();
+        lblNombre.setText ("");
+        if (Character.isDigit (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblNombre.setText ("Solo puedes ingresar Letras");
+           
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        lblNombre.setText("");
+        lblDireccion.setText("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        lblDireccion.setText ("");
+        if (Character.isDigit (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblDireccion.setText ("Solo puedes ingresar Letras");
+        }
+    }//GEN-LAST:event_txtDireccionKeyTyped
+
+    private void txtDireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionMouseClicked
+        // TODO add your handling code here:
+        
+        lblDireccion.setText("");
+        lblNombre.setText("");
+    }//GEN-LAST:event_txtDireccionMouseClicked
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        lblTelefono.setText ("");
+        if (Character.isLetter (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblTelefono.setText ("Solo puedes ingresar Numeros");
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoMouseClicked
+        // TODO add your handling code here:
+        lblTelefono.setText("");
+        lblDireccion.setText("");
+    }//GEN-LAST:event_txtTelefonoMouseClicked
+
+    private void txtSalarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        lblSalario.setText ("");
+        if (Character.isLetter (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblSalario.setText ("Solo puedes ingresar Numeros");
+        }
+        
+    }//GEN-LAST:event_txtSalarioKeyTyped
+
+    private void txtSalarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSalarioMouseClicked
+        // TODO add your handling code here:
+        lblSalario.setText("");
+        lblTelefono.setText("");
+    }//GEN-LAST:event_txtSalarioMouseClicked
+
+    private void txtCargoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        lblCargo.setText ("");
+        if (Character.isDigit (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblCargo.setText ("Solo puedes ingresar Letras");
+        }
+    }//GEN-LAST:event_txtCargoKeyTyped
+
+    private void txtCargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCargoMouseClicked
+        // TODO add your handling code here:
+        lblCargo.setText("");
+        lblSalario.setText("");
+    }//GEN-LAST:event_txtCargoMouseClicked
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        lblNombre.setText("");
+        lblDireccion.setText("");
+        lblCargo.setText("");
+        lblSalario.setText("");
+        lblTelefono.setText("");
+    }//GEN-LAST:event_jPanel2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialOne btnAgregar;
@@ -226,6 +404,11 @@ private final ConectarEmpleado registrar;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblCargo;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblSalario;
+    private javax.swing.JLabel lblTelefono;
     public static javax.swing.JPanel panelPapas;
     private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
     public static RSMaterialComponent.RSTextFieldMaterialIcon txtCargo;

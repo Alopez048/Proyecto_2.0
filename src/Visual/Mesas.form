@@ -103,7 +103,7 @@
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="btnMesa1" min="-2" pref="133" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnMesa3" min="-2" pref="133" max="-2" attributes="0"/>
+                  <Component id="btnMesa2" min="-2" pref="133" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -116,7 +116,7 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnMesa1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnMesa3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMesa2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="68" max="32767" attributes="0"/>
               </Group>
@@ -135,7 +135,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="RSMaterialComponent.RSButtonMaterialOne" name="btnMesa3">
+        <Component class="RSMaterialComponent.RSButtonMaterialOne" name="btnMesa2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="89" green="9d" red="1a" type="rgb"/>
@@ -143,7 +143,7 @@
             <Property name="text" type="java.lang.String" value="MESA 2"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa2ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">

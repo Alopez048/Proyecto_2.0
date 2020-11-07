@@ -7,6 +7,7 @@ package iPane;
 
 import Code.ConCliente;
 import Visual.Mesas;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -94,15 +95,30 @@ public class panelClientes extends javax.swing.JPanel {
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+        });
 
         txtNit.setForeground(new java.awt.Color(102, 102, 102));
         txtNit.setColorIcon(new java.awt.Color(102, 102, 102));
         txtNit.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtNit.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_OFFER);
         txtNit.setPlaceholder("NIT");
+        txtNit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNitMouseClicked(evt);
+            }
+        });
         txtNit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNitActionPerformed(evt);
+            }
+        });
+        txtNit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNitKeyTyped(evt);
             }
         });
 
@@ -111,14 +127,34 @@ public class panelClientes extends javax.swing.JPanel {
         txtTelefono.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtTelefono.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PHONE);
         txtTelefono.setPlaceholder("Telefono");
+        txtTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTelefonoMouseClicked(evt);
+            }
+        });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
 
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setColorIcon(new java.awt.Color(102, 102, 102));
         txtNombre.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtNombre.setPlaceholder("Nombre");
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
+            }
+        });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
             }
         });
 
@@ -127,6 +163,16 @@ public class panelClientes extends javax.swing.JPanel {
         txtDireccion.setColorMaterial(new java.awt.Color(255, 204, 0));
         txtDireccion.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_ACTIVITY);
         txtDireccion.setPlaceholder("Direccion");
+        txtDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDireccionMouseClicked(evt);
+            }
+        });
+        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionKeyTyped(evt);
+            }
+        });
 
         btnSiguiente.setBackground(new java.awt.Color(26, 157, 137));
         btnSiguiente.setText("Siguiente");
@@ -210,7 +256,7 @@ public class panelClientes extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -278,6 +324,78 @@ public class panelClientes extends javax.swing.JPanel {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char validar = evt.getKeyChar();
+        lblNombre.setText ("");
+        if (Character.isDigit (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblNombre.setText ("Solo puedes ingresar Letras");
+           
+        }
+        
+        
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        lblNombre.setText ("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void txtNitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNitKeyTyped
+   //
+    }//GEN-LAST:event_txtNitKeyTyped
+
+    private void txtNitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNitMouseClicked
+        //lblNit.setText ("");
+        lblNombre.setText ("");
+        lblDireccion.setText("");
+    }//GEN-LAST:event_txtNitMouseClicked
+
+    private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
+         
+        char validar = evt.getKeyChar();
+        lblDireccion.setText ("");
+        if (Character.isDigit (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblDireccion.setText ("Solo puedes ingresar Letras");
+           
+        }
+    }//GEN-LAST:event_txtDireccionKeyTyped
+
+    private void txtDireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionMouseClicked
+        lblDireccion.setText ("");
+        //lblNit.setText ("");
+        lblTelefono.setText ("");
+    }//GEN-LAST:event_txtDireccionMouseClicked
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+       
+        char validar = evt.getKeyChar();
+        lblTelefono.setText ("");
+        if (Character.isLetter (validar)){ 
+            getToolkit () .beep();
+            evt.consume();
+            
+           lblTelefono.setText ("Solo puedes ingresar Numeros");
+           
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoMouseClicked
+        lblTelefono.setText("");
+        lblDireccion.setText("");
+    }//GEN-LAST:event_txtTelefonoMouseClicked
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        lblNombre.setText("");
+        lblNit.setText("");
+        lblDireccion.setText("");
+        lblTelefono.setText("");
+    }//GEN-LAST:event_jPanel2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

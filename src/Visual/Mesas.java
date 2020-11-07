@@ -37,7 +37,7 @@ public class Mesas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnMesa1 = new RSMaterialComponent.RSButtonMaterialOne();
-        btnMesa3 = new RSMaterialComponent.RSButtonMaterialOne();
+        btnMesa2 = new RSMaterialComponent.RSButtonMaterialOne();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,11 +76,11 @@ public class Mesas extends javax.swing.JFrame {
             }
         });
 
-        btnMesa3.setBackground(new java.awt.Color(26, 157, 137));
-        btnMesa3.setText("MESA 2");
-        btnMesa3.addActionListener(new java.awt.event.ActionListener() {
+        btnMesa2.setBackground(new java.awt.Color(26, 157, 137));
+        btnMesa2.setText("MESA 2");
+        btnMesa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMesa3ActionPerformed(evt);
+                btnMesa2ActionPerformed(evt);
             }
         });
 
@@ -99,7 +99,7 @@ public class Mesas extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(btnMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnMesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
@@ -110,7 +110,7 @@ public class Mesas extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMesa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMesa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -149,10 +149,23 @@ public class Mesas extends javax.swing.JFrame {
   dispose();
     }//GEN-LAST:event_btnMesa1ActionPerformed
 
-    private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
-        
+    private void btnMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa2ActionPerformed
+          String  nombre  = txtNombre.getText();
+        int mesa = Integer.parseInt ("2");
+         String nit = txtNit.getText();
+        String direccion = txtDireccion.getText();
+        int telefono = Integer.parseInt(txtTelefono.getText());
+        String idnit=txtNit.getText();
+  
+  cliente.ConCliente(mesa,nombre, nit, direccion, telefono);
+  
+        txtNombre.setText("");
+        //txtNit.setText("");
+        txtDireccion.setText("");
+        txtTelefono.setText("");
+        dispose();
        
-    }//GEN-LAST:event_btnMesa3ActionPerformed
+    }//GEN-LAST:event_btnMesa2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,7 +205,7 @@ public class Mesas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialOne btnMesa1;
-    private RSMaterialComponent.RSButtonMaterialOne btnMesa3;
+    private RSMaterialComponent.RSButtonMaterialOne btnMesa2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public static javax.swing.JPanel jPanel2;
