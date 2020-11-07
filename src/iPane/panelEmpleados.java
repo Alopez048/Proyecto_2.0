@@ -80,7 +80,7 @@ private final ConectarEmpleado registrar;
             panelPapasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPapasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelPapasLayout.setVerticalGroup(
@@ -273,7 +273,7 @@ private final ConectarEmpleado registrar;
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 468, Short.MAX_VALUE)
         );
 
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 80, -1, 468));
@@ -293,6 +293,12 @@ private final ConectarEmpleado registrar;
         String Cargo = txtCargo.getText();
         
         registrar.ConectarEmpleado( nombre, dir, tel, salr, Cargo);
+        txtNombre.setText("");
+        txtDireccion.setText("");
+        txtTelefono.setText("");
+        txtSalario.setText("");
+        txtCargo.setText("");
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
