@@ -6,7 +6,9 @@
 package Visual;
 
 import Code.ConCliente;
+import static Visual.MENU.pnlSlider;
 import static iPane.panelClientes.*;
+import rojerusan.RSPanelsSlider;
 
 /**
  *
@@ -163,7 +165,9 @@ public class Mesas extends javax.swing.JFrame {
         //txtNit.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
+        
         dispose();
+        pnlSlider.setPanelSlider(1,Visual.MENU.panelMenú1, RSPanelsSlider.DIRECT.RIGHT);
        
     }//GEN-LAST:event_btnMesa2ActionPerformed
 

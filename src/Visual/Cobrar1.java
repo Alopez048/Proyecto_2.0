@@ -7,12 +7,18 @@ package Visual;
 
 import Code.loginconect;
 import MySQL.Coneection;
+import static Visual.MENU.panelClientes1;
+import static Visual.MENU.pnlSlider;
 import static iPane.panelClientes.txtNit;
+import java.awt.Menu;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import rojerusan.RSPanelsSlider;
+import iPane.panelFactura.*;
 
 
 public class Cobrar1 extends javax.swing.JFrame {
@@ -78,8 +84,6 @@ public class Cobrar1 extends javax.swing.JFrame {
         lblCambio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCambio.setText("Cambio");
 
-        lblCantidad.setText("jLabel3");
-
         txtTotal.setEditable(false);
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setColorIcon(new java.awt.Color(102, 102, 102));
@@ -87,7 +91,7 @@ public class Cobrar1 extends javax.swing.JFrame {
         txtTotal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_1);
         txtTotal.setPlaceholder("");
 
-        txtRecibido.setText("rSTextFieldMaterial1");
+        txtRecibido.setPlaceholder("Cantidad recibida");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,11 +213,23 @@ public class Cobrar1 extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
    dispose();
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCobrarActionPerformed
       int totalfinal=Integer.parseInt(txtRecibido.getText())-Integer.parseInt(txtTotal.getText());
       lblCantidad.setText(String.valueOf(totalfinal));
+      
+      JOptionPane.showMessageDialog(null, "Cobro realizado con exito");
+      pnlSlider.setPanelSlider(1,panelClientes1, RSPanelsSlider.DIRECT.RIGHT);
+      DefaultTableModel modelo = new DefaultTableModel();
+      iPane.panelFactura.TableFactura.setModel(modelo);
+      iPane.panelFactura.txtNombre.setText("");
+      iPane.panelFactura.txtDireccion.setText("");
+      iPane.panelFactura.txtNit.setText("");
+      dispose();
+      
+      
     }//GEN-LAST:event_btnCobrarActionPerformed
 loginconect loginconect = new loginconect();
     /**

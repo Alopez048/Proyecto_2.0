@@ -232,9 +232,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblCantidad">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="jLabel3"/>
-                          </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                           </AuxValues>
@@ -262,7 +259,7 @@
                         </Component>
                         <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtRecibido">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="rSTextFieldMaterial1"/>
+                            <Property name="placeholder" type="java.lang.String" value="Cantidad recibida"/>
                           </Properties>
                         </Component>
                       </SubComponents>

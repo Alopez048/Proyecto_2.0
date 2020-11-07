@@ -278,7 +278,7 @@ public class panelFactura extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
-        
+                
         Cobrar1 cobro = new Cobrar1();
         cobro.setVisible(true);
     }//GEN-LAST:event_btnPagarActionPerformed
@@ -325,9 +325,7 @@ public class panelFactura extends javax.swing.JPanel {
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-        
-        
-        
+
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             TableFactura.setModel(modelo);
@@ -371,7 +369,7 @@ public class panelFactura extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSTableMetro TableFactura;
+    public static rojerusan.RSTableMetro TableFactura;
     private RSMaterialComponent.RSButtonMaterialOne btnBuscar;
     private RSMaterialComponent.RSButtonMaterialOne btnPagar;
     private javax.swing.JLabel jLabel1;
@@ -387,9 +385,9 @@ public class panelFactura extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     public static javax.swing.JPanel panelPapas;
     private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
-    private RSMaterialComponent.RSTextFieldMaterial txtDireccion;
-    private RSMaterialComponent.RSTextFieldMaterial txtNit;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombre;
+    public static RSMaterialComponent.RSTextFieldMaterial txtDireccion;
+    public static RSMaterialComponent.RSTextFieldMaterial txtNit;
+    public static RSMaterialComponent.RSTextFieldMaterial txtNombre;
     public static javax.swing.JTextField txttotal;
     // End of variables declaration//GEN-END:variables
 }

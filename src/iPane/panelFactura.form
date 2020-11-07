@@ -311,6 +311,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -327,6 +330,9 @@
             </Property>
             <Property name="placeholder" type="java.lang.String" value="NIT"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtDireccion">
           <Properties>
@@ -342,6 +348,9 @@
             </Property>
             <Property name="placeholder" type="java.lang.String" value="Direccion"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtNombre">
           <Properties>
@@ -357,6 +366,9 @@
             </Property>
             <Property name="placeholder" type="java.lang.String" value="Nombre"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="RSMaterialComponent.RSButtonMaterialOne" name="btnPagar">
           <Properties>
